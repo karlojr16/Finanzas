@@ -38,7 +38,7 @@ public class Controller {
         comboTipo.setItems(FXCollections.observableArrayList("Ingreso", "Egreso"));
 
         // Inicializar ComboBox categorías
-        comboCategoria.setItems(FXCollections.observableArrayList("Comida", "Transporte", "Salud", "Entretenimiento", "Otros"));
+        comboCategoria.setItems(FXCollections.observableArrayList("Comida", "Transporte", "Salud", "Entretenimiento", "Educacion", "Otros"));
 
         // Inicializar columnas de tabla
         colTipo.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getTipo()));
