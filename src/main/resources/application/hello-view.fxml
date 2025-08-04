@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.Controller">
+
+    <!-- Zona superior: formulario -->
+    <top>
+        <VBox spacing="10" padding="10">
+            <Label text="Registrar Movimiento" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+            <HBox spacing="10">
+                <ComboBox fx:id="comboTipo" promptText="Tipo (Ingreso/Egreso)" prefWidth="150" />
+                <TextField fx:id="txtCantidad" promptText="Cantidad" prefWidth="150" />
+                <ComboBox fx:id="comboCategoria" promptText="Categoría" prefWidth="150" />
+            </HBox>
+
+            <HBox spacing="10">
+                <TextField fx:id="txtDescripcion" promptText="Descripción" prefWidth="310" />
+                <DatePicker fx:id="datePicker" promptText="Fecha" prefWidth="150" />
+                <Button fx:id="btnAgregar" text="Agregar" prefWidth="100" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Zona central: tabla -->
+    <center>
+        <TableView fx:id="tablaMovimientos">
+            <columns>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="100"/>
+                <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="150"/>
+                <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="200"/>
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Zona inferior: saldo y gráfica -->
+    <bottom>
+        <VBox spacing="10" padding="10">
+            <Label fx:id="lblSaldo" text="Saldo actual: $" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+            <PieChart fx:id="graficaCategorias" prefHeight="250"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
